@@ -8,36 +8,52 @@ Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio,
 Buon lavoro!*/
 
 // var km request
-let km = parseInt(prompt("Quanti km dovrà percorrere il passeggero?"));
-console.log(km);
+//let km = parseInt(prompt("Quanti km dovrà percorrere il passeggero?"));
+let km = document.getElementById("km");
+let age = document.getElementById("ageRequest");
+let fullName = document.getElementById("fullName");
+let startBtn = document.getElementById("generaBtn");
+let finalPrice = document.getElementById("costoBiglietto")
 
-// var age request
-let age = parseFloat(prompt("Quanti anni ha il passeggero?"));
-console.log(age)
+startBtn.addEventListener("click", function () {
+    age = age.value;
+    km = km.value;
 
-/*ho deciso di calcolare a monte le percentuali di sconto e applicarle al 
+
+    /*ho deciso di calcolare a monte le percentuali di sconto e applicarle al 
 fullPrice(0.21), rendendole costanti per semplificare i calcoli successivi*/
 
-// const 0.21 € * km
-const fullPrice = (km * 0.21);
+    // const 0.21 € * km
+    const fullPrice = (km * 0.21);
 
-//const price U 18
-const priceU18 = (fullPrice - (fullPrice * 20 / 100));
+    //const price U 18
+    const priceU18 = (fullPrice - (fullPrice * 20 / 100));
 
-//const price Ov 65
-const priceOv65 = (fullPrice - (fullPrice * 40 / 100));
+    //const price Ov 65
+    const priceOv65 = (fullPrice - (fullPrice * 40 / 100));
 
 
-// 20% discount U 18
-if (age < 18) {
-    alert(`${priceU18} € è il prezzo del tuo biglietto`)
-    console.log(priceU18);
-    // 40% discount Ov 65
-} else if (age >= 65) {
-    alert(`${priceOv65} € è il prezzo del tuo biglietto`)
-    console.log(priceOv65)
-    //no discount
-} else {
-    alert(`${fullPrice} € è il prezzo del tuo biglietto`)
-    console.log(fullPrice)
-}
+    let finalPrice = 0;
+
+    if (age == 1) {
+        finalPrice = priceU18 * km;
+
+        console.log(finalPrice.toFixed(2));
+        // 40% discount Ov 65
+    } else if (age == 2) {
+        finalPrice = priceOv65 * km;
+        console.log(finalPrice.toFixed(2))
+        //no discount
+    } else {
+        finalPrice = fullPrice * km;
+        console.log(finalPrice.toFixed(2))
+    }
+    costoBiglietto.innerHTML = finalPrice
+})
+
+
+
+
+
+
+

@@ -1,4 +1,64 @@
 body {
-    background-color: aquamarine;
+
+    background-color: #B91547;
     text-align: center;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+
+}
+
+main {
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.main-title {
+    color: white;
+}
+
+h1 {
+    margin: 20px;
+}
+
+.card-one {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: white;
+    border: solid 3px;
+    border-color: lightgray;
+    border-radius: 20px;
+    width: 200vh;
+
+}
+
+
+
+.mini-card {
+    flex-basis: 30%;
+
+}
+
+.margin-button {
+    margin: 25px;
+
+}
+
+.card-ticket {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: white;
+    border: solid 4px;
+    border-color: black;
+    border-radius: 5px;
+    width: 150vh;
+    height: 200px;
 }
